@@ -1,0 +1,72 @@
+:root {
+    --body-bg: rgb(67, 98, 146);
+    --haberger-bg:rgb(67, 98, 146);
+}
+html, body{
+    height: 100%;
+}
+
+body {
+    background-color: var(--body-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: right;
+}
+.hamberger-title{
+    color: white;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+label{
+    width: 100px;
+    height: 100px;
+    display: inline;
+}
+.hamberger-container{
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: var(--haberger-bg);
+}
+
+.hamberger, 
+.hamberger::before,
+.hamberger::after {
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    transition: 0.5s;
+    background: white;
+}
+
+.hamberger::before,
+.hamberger::after {
+    content: "";
+}
+
+.hamberger{
+    top: 50%;
+}
+
+.hamberger::before{
+    top: -30px;
+}
+
+.hamberger::after{
+    top: 30px;
+}
+
+.toggle:checked ~ .hamberger::after{
+    top: 0;
+}
+.toggle:checked ~ .hamberger::before{
+    top: 0;
+}
+.toggle:checked ~ .hamberger{
+    background: var(--haberger-bg);
+}
+.toggle{
+    opacity: 0;
+}
